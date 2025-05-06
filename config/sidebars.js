@@ -22,77 +22,38 @@
       id: 'index'
     },
     {
-      type: 'doc',
-      label: 'Frequently Asked Questions',
-      id: 'faq',
-    },
-    {
       type: 'category',
       collapsed: false,
-      label: 'Installation',
+      label: 'Tutorial',
       link: {
         type: 'doc',
-        id: 'installation/index'
+        id: 'tutorial/index'
       },
       items: [
         {
           type: 'doc',
-          label: 'Initial Setup',
-          id: 'installation/initial-setup',
-        },
-        {
-          type: 'doc',
-          label: 'Sync Setup',
-          id: 'installation/sync-setup',
-        },
-        {
-          type: 'doc',
-          label: 'Voice Setup',
-          id: 'installation/voice-setup',
-        },
-        {
-          type: 'doc',
-          label: 'Link to Join Setup',
-          id: 'installation/link-to-join-setup',
+          label: 'first tutorial',
+          id: 'tutorial/firsttutorial',
         },
       ],
     },
-    {
-      type: 'category',
-      collapsed: false,
-      label: 'Configs',
-      items: [
-        {
-          label: 'alerts.yml',
-          id: 'alerts',
-          type: 'doc'
+  ],
+  commandsSidebar: [
+      {
+        type: 'category',
+        collapsed: false,
+        label: 'Commands',
+        link: {
+          type: 'doc',
+          id: 'commands/index'
         },
-        {
-          label: 'config.yml',
-          id: 'config',
-          type: 'doc'
-        },
-        {
-          label: 'linking.yml',
-          id: 'linking',
-          type: 'doc'
-        },
-        {
-          label: 'messages.yml',
-          id: 'messages',
-          type: 'doc'
-        },
-        {
-          label: 'synchronization.yml',
-          id: 'synchronization',
-          type: 'doc'
-        },
-        {
-          label: 'voice.yml',
-          id: 'voice',
-          type: 'doc'
-        },
-      ],
+        items: [
+          {
+            type: 'doc',
+            label: 'Test command',
+            id: 'commands/testcommand',
+          },
+        ],
     },
   ],
   // By default, Docusaurus generates a sidebar from the docs folder structure

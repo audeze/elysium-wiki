@@ -42,11 +42,12 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
+          routeBasePath: '/',
           sidebarPath: './config/sidebars.js',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/audeze/elysium-wiki.git',
+          showLastUpdateAuthor: true,
+          showLastUpdateTime: true,
         },
         blog: false,
         theme: {
@@ -60,7 +61,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
+      image: 'img/Logo_low.png',
       navbar: {
         title: 'ElysiumSMP WIki',
         logo: {
@@ -69,15 +70,20 @@ const config = {
         },
         items: [
           {
-            type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
-            position: 'left',
             label: 'Tutorial',
+            type: 'docSidebar',
+            sidebarId: 'mainSidebar',
+            position: 'left',
           },
-          {to: '/commands', label: 'Commands', position: 'left'},
           {
-            href: 'https://github.com/audeze',
-            label: 'GitHub',
+            label: 'Commands',
+            type: 'docSidebar',
+            sidebarId: 'commandsSidebar',
+            position: 'left',
+          },
+          {
+            href: 'https://discord.gg/HnNAGNKuqP',
+            label: 'Discord',
             position: 'right',
           },
         ],
@@ -86,11 +92,15 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
+            title: 'Wiki',
             items: [
               {
                 label: 'Tutorial',
-                to: '/docs/intro',
+                to: 'tutorial/firsttutorial',
+              },
+              {
+                label: 'Commands',
+                to: 'commands/testcommand',
               },
             ],
           },
@@ -101,29 +111,34 @@ const config = {
                 label: 'Discord',
                 href: 'https://discord.gg/HnNAGNKuqP',
               },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
               {
-                label: 'Blog',
-                to: '/blog',
+                label: 'Website',
+                href: 'https://elysiumsmp.net/',
               },
               {
-                label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                label: 'Store',
+                href: 'https://store.elysiumsmp.net/',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Elysium Wiki, Inc. Built with Docusaurus.`,
       },
       prism: {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
       },
     }),
+    themes: [
+      [
+          require.resolve('@easyops-cn/docusaurus-search-local'),
+        ({
+          indexBlog: false,
+          hashed: true,
+          docsRouteBasePath: "/"
+        })
+      ],
+    ]
 };
 
 export default config;
